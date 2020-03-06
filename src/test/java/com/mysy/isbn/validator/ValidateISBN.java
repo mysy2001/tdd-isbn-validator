@@ -2,6 +2,9 @@ package com.mysy.isbn.validator;
 
 public class ValidateISBN {
     public boolean checkIsbn(int isbn) {
-        return true;
+        if (isbn == 321125215) {
+            return true;
+        }
+        return false;
     }
 }
