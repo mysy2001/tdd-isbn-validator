@@ -32,4 +32,13 @@ class ValidateISBNTest {
             validator.checkIsbn("321125216");
         }).isInstanceOf(NumberFormatException.class);
     }
+
+    @Test
+    void nonNumberIsbnIsNotAllowed() {
+        ValidateISBN validator = new ValidateISBN();
+
+        assertThatThrownBy(() -> {
+            validator.checkIsbn("HelloWorld");
+        }).isInstanceOf(NumberFormatException.class);
+    }
 }
