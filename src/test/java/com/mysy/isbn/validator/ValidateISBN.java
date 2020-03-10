@@ -12,11 +12,13 @@ public class ValidateISBN {
             if (!Character.isDigit(isbn.charAt(i))) {
                 if (i == 9 && isbn.charAt(i) == 'X')  {
                     //ok
+                    total += 10;
                 } else {
                     throw new NumberFormatException("ISBN number can only contain numeric digits");
                 }
+            } else {
+                total += Character.getNumericValue(isbn.charAt(i)) * (10 - i);
             }
-            total += isbn.charAt(i) * (10 - i);
         }
 
         if (total % 11 == 0) {
