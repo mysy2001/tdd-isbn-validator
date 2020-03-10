@@ -9,17 +9,17 @@ class ValidateISBNTest {
     @Test
     void checkAValidISBN() {
         ValidateISBN validator = new ValidateISBN();
-        boolean result = validator.checkIsbn(321125215L);
+        boolean result = validator.checkIsbn("0321125215");
         assertThat(result).isTrue();
         //8389779013
-        result = validator.checkIsbn(8389779013L);
+        result = validator.checkIsbn("8389779013");
         assertThat(result).isTrue();
     }
 
     @Test
     void checkAnInvalidISBN() {
         ValidateISBN validator = new ValidateISBN();
-        boolean result = validator.checkIsbn(321125216);
+        boolean result = validator.checkIsbn("321125216");
         assertThat(result).isFalse();
     }
 }
