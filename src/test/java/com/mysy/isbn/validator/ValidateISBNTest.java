@@ -2,6 +2,7 @@ package com.mysy.isbn.validator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,13 @@ class ValidateISBNTest {
         assertThat(result).isTrue();
         //8389779013
         result = validator.checkIsbn("8389779013");
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    void ISBNumbersEndingXAreValid() {
+        ValidateISBN validator = new ValidateISBN();
+        boolean result = validator.checkIsbn("012000030X");
         assertThat(result).isTrue();
     }
 
