@@ -19,6 +19,16 @@ class ValidateISBNTest {
     }
 
     @Test
+    void checkAValid13DigitISBN() {
+        //9788327159168
+        ValidateISBN validator = new ValidateISBN();
+        boolean result =  validator.checkIsbn("9788327159168");
+        assertThat(result).isTrue();
+        //9788365973849
+
+    }
+
+    @Test
     void ISBNumbersEndingXAreValid() {
         ValidateISBN validator = new ValidateISBN();
         boolean result = validator.checkIsbn("012000030X");
