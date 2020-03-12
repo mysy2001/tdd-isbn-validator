@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class ValidateISBNTest {
 
     @Test
-    void checkAValidISBN() {
+    void checkAValid10DigitISBN() {
         ValidateISBN validator = new ValidateISBN();
         boolean result = validator.checkIsbn("0321125215");
         assertThat(result).isTrue();
@@ -31,14 +31,14 @@ class ValidateISBNTest {
     }
 
     @Test
-    void ISBNumbersEndingXAreValid() {
+    void TenDigitISBNumbersEndingXAreValid() {
         ValidateISBN validator = new ValidateISBN();
         boolean result = validator.checkIsbn("012000030X");
         assertThat(result).isTrue();
     }
 
     @Test
-    void checkAnInvalidISBN() {
+    void checkAnInvalid10DigitISBN() {
         ValidateISBN validator = new ValidateISBN();
         boolean result = validator.checkIsbn("0321125216");
         assertThat(result).isFalse();
