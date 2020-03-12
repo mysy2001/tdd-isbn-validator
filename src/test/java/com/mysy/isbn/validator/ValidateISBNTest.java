@@ -25,6 +25,8 @@ class ValidateISBNTest {
         boolean result =  validator.checkIsbn("9788327159168");
         assertThat(result).isTrue();
         //9788365973849
+        result =  validator.checkIsbn("9788365973849");
+        assertThat(result).isTrue();
 
     }
 
