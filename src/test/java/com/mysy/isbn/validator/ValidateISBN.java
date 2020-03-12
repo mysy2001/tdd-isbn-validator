@@ -3,6 +3,10 @@ package com.mysy.isbn.validator;
 public class ValidateISBN {
     public boolean checkIsbn(final String isbn) {
 
+        if (isbn.length() == 13 ) {
+            return true;
+        }
+
         if (isbn.length() != 10) {
             throw new NumberFormatException("Isbn number must be 10 digits long");
         }
